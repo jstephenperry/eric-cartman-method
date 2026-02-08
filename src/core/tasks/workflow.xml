@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-engine>
+  <description>
+    ECM Workflow Execution Engine
+    This engine governs all workflow execution in the Eric Cartman Method.
+  </description>
+
+  <critical-rules>
+    <rule priority="1">Fixed time, variable scope - never extend deadlines</rule>
+    <rule priority="2">Execute workflow steps in exact order</rule>
+    <rule priority="3">Communicate in configured language at configured skill level</rule>
+    <rule priority="4">Generate documents in configured document output language</rule>
+    <rule priority="5">Respect circuit breaker decisions - ship or kill only</rule>
+  </critical-rules>
+
+  <workflow-phases>
+    <phase name="shaping" description="Pre-cycle problem and solution shaping">
+      <principle>Make work concrete before betting on it</principle>
+      <outputs>Pitches with appetite, boundaries, and de-risked solutions</outputs>
+    </phase>
+
+    <phase name="betting" description="Strategic commitment to shaped work">
+      <principle>Bet on pitches, not tasks from a backlog</principle>
+      <outputs>Bet pitches assigned to cycles</outputs>
+    </phase>
+
+    <phase name="building" description="Cycle execution with discovered scopes">
+      <principle>Discover scopes during building, track on hill charts</principle>
+      <outputs>Shipped features or killed pitches</outputs>
+    </phase>
+
+    <phase name="cooldown" description="Between-cycle maintenance and exploration">
+      <principle>Use cool-down for bugs, tech debt, and blue-sky exploration</principle>
+      <outputs>Fixed bugs, reduced debt, future pitch ideas</outputs>
+    </phase>
+  </workflow-phases>
+
+  <execution-model>
+    <step-processing>
+      <instruction>Read complete step definition before acting</instruction>
+      <instruction>Check all conditions before proceeding</instruction>
+      <instruction>Execute actions in order within step</instruction>
+      <instruction>Provide outputs as specified</instruction>
+      <instruction>Validate against checklist if provided</instruction>
+    </step-processing>
+
+    <variable-resolution>
+      <pattern>{project-root}</pattern>
+      <pattern>{output_folder}</pattern>
+      <pattern>{config_source}:variable</pattern>
+      <pattern>{{workflow_variable}}</pattern>
+      <pattern>system-generated</pattern>
+    </variable-resolution>
+
+    <error-handling>
+      <on-missing-file>Report to user and suggest resolution</on-missing-file>
+      <on-validation-fail>List failed items and request fixes</on-validation-fail>
+      <on-scope-creep>Warn user and suggest scope cuts</on-scope-creep>
+    </error-handling>
+  </execution-model>
+
+  <hill-chart-integration>
+    <position-meanings>
+      <range start="0" end="25">Just started, many unknowns</range>
+      <range start="25" end="50">Making progress, some unknowns remain</range>
+      <range start="50" end="50">Peak - all unknowns resolved</range>
+      <range start="50" end="75">Executing on known work</range>
+      <range start="75" end="100">Finishing up, almost done</range>
+    </position-meanings>
+
+    <stuck-detection>
+      <warning after-days="3" position-change-less-than="5">
+        Scope may be stuck - consider breaking down or getting help
+      </warning>
+    </stuck-detection>
+  </hill-chart-integration>
+
+  <circuit-breaker>
+    <decisions>
+      <decision name="ship">Deploy what is complete, cut remaining scope</decision>
+      <decision name="kill">Cancel the bet entirely, learn and move on</decision>
+    </decisions>
+    <forbidden>
+      <action>Extend the cycle deadline</action>
+      <action>Carry work to next cycle</action>
+      <action>Add "just one more thing"</action>
+    </forbidden>
+  </circuit-breaker>
+</workflow-engine>

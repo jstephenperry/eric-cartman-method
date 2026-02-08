@@ -1,0 +1,16 @@
+# Test: Agent missing metadata
+# Expected: FAIL
+
+agent:
+  # metadata is missing - should fail validation
+
+  persona:
+    role: Test role
+    identity: Test identity
+    communication_style: Test style
+    principles: Test principles
+
+  menu:
+    - trigger: help
+      description: Help
+      action: help

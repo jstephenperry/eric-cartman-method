@@ -1,0 +1,23 @@
+# Test: Menu item with multiple command targets
+# Expected: FAIL
+
+agent:
+  metadata:
+    id: multi-target-test
+    name: Multi Target Test
+    title: Multi Target
+    icon: "\u274C"
+    hasSidecar: false
+
+  persona:
+    role: Test role
+    identity: Test identity
+    communication_style: Test style
+    principles: Test principles
+
+  menu:
+    - trigger: bad-menu-item
+      description: Has multiple targets
+      action: an_action
+      workflow: "/path/to/workflow"
+      # Having both action AND workflow is invalid

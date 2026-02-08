@@ -1,0 +1,54 @@
+code: ecm
+name: "Eric Cartman Method - Shape Up AI-Driven Development"
+description: "AI-driven Shape Up methodology implementing fixed time, variable scope development cycles"
+default_selected: true
+
+# Variables from Core Config inserted via: ## variable_name
+## user_name
+## communication_language
+## document_output_language
+## output_folder
+
+project_name:
+  prompt: "What is your project called?"
+  default: "{directory_name}"
+  result: "{value}"
+
+user_skill_level:
+  prompt:
+    - "What is your development experience level?"
+    - "This affects how agents explain concepts in chat."
+  default: "intermediate"
+  result: "{value}"
+  single-select:
+    - value: "beginner"
+      label: "Beginner - Explain Shape Up concepts clearly"
+    - value: "intermediate"
+      label: "Intermediate - Balance detail with speed"
+    - value: "expert"
+      label: "Expert - Be direct and technical"
+
+cycle_type:
+  prompt: "What is your default cycle type?"
+  default: "big-batch"
+  result: "{value}"
+  single-select:
+    - value: "small-batch"
+      label: "Small Batch - 2-week cycles for focused work"
+    - value: "big-batch"
+      label: "Big Batch - 6-week cycles for significant features"
+
+shaping_artifacts:
+  prompt: "Where should shaping artifacts (pitches, breadboards) be stored?"
+  default: "{output_folder}/shaping"
+  result: "{project-root}/{value}"
+
+building_artifacts:
+  prompt: "Where should building artifacts (scopes, hill charts) be stored?"
+  default: "{output_folder}/building"
+  result: "{project-root}/{value}"
+
+project_knowledge:
+  prompt: "Where should long-term project knowledge be stored?"
+  default: "docs"
+  result: "{project-root}/{value}"

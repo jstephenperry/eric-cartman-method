@@ -1,0 +1,22 @@
+module,phase,name,code,sequence,workflow-file,command,required,agent,options,description,output-location,outputs
+ecm,1-shaping,Shape Problem,SP,10,_ecm/ecm/workflows/1-shaping/shape-problem/workflow.md,ecm-shape-problem,false,shaper,Create Mode,"Define the problem and job to be done",shaping_artifacts,problem statement
+ecm,1-shaping,Shape Solution,SS,15,_ecm/ecm/workflows/1-shaping/shape-solution/workflow.md,ecm-shape-solution,false,shaper,Create Mode,"Shape the solution approach",shaping_artifacts,solution outline
+ecm,1-shaping,Breadboard,BB,20,_ecm/ecm/workflows/1-shaping/breadboard/workflow.md,ecm-breadboard,false,technical-shaper,Create Mode,"Create technical flow diagram",shaping_artifacts,breadboard diagram
+ecm,1-shaping,De-Risk,DR,30,_ecm/ecm/workflows/1-shaping/de-risk/workflow.md,ecm-de-risk,false,technical-shaper,Create Mode,"Identify and mitigate rabbit holes",shaping_artifacts,risk assessment
+ecm,1-shaping,Write Pitch,WP,40,_ecm/ecm/workflows/1-shaping/write-pitch/workflow.md,ecm-write-pitch,true,pitcher,Create Mode,"Create formal pitch with appetite and boundaries",shaping_artifacts,pitch document
+ecm,2-betting,Betting Table,BT,10,_ecm/ecm/workflows/2-betting/betting-table/workflow.yaml,ecm-betting-table,true,pitcher,Create Mode,"Make strategic commitment to pitches",shaping_artifacts,betting decisions
+ecm,2-betting,Appetite Setting,AS,20,_ecm/ecm/workflows/2-betting/appetite-setting/workflow.yaml,ecm-appetite-setting,false,pitcher,Create Mode,"Determine Small Batch or Big Batch appetite",shaping_artifacts,appetite decision
+ecm,3-building,Cycle Planning,CP,10,_ecm/ecm/workflows/3-building/cycle-planning/workflow.yaml,ecm-cycle-planning,true,cycle-lead,Create Mode,"Initialize cycle with bet pitch",building_artifacts,cycle-status.yaml
+ecm,3-building,Create Scope,CS,20,_ecm/ecm/workflows/3-building/create-scope/workflow.yaml,ecm-create-scope,false,cycle-lead,Create Mode,"Document discovered scope",building_artifacts,scope document
+ecm,3-building,Dev Scope,DS,40,_ecm/ecm/workflows/3-building/dev-scope/workflow.yaml,ecm-dev-scope,true,builder,Create Mode,"Implement scope work",building_artifacts,implementation
+ecm,3-building,Update Hill,UH,30,_ecm/ecm/workflows/3-building/update-hill-chart/workflow.yaml,ecm-update-hill,false,cycle-lead,Create Mode,"Update scope hill position",building_artifacts,hill chart update
+ecm,3-building,Code Review,CR,50,_ecm/ecm/workflows/3-building/code-review/workflow.yaml,ecm-code-review,false,builder,Create Mode,"Review implementation",building_artifacts,review feedback
+ecm,3-building,Circuit Breaker,CB,90,_ecm/ecm/workflows/3-building/circuit-breaker/workflow.yaml,ecm-circuit-breaker,true,cycle-lead,Create Mode,"End of cycle ship or kill decision",building_artifacts,circuit decision
+ecm,4-cooldown,Bug Bash,BG,10,_ecm/ecm/workflows/4-cooldown/bug-bash/workflow.yaml,ecm-bug-bash,false,builder,Create Mode,"Focused bug fixing",building_artifacts,bug fixes
+ecm,4-cooldown,Tech Debt,TD,20,_ecm/ecm/workflows/4-cooldown/tech-debt/workflow.yaml,ecm-tech-debt,false,builder,Create Mode,"Address technical debt",building_artifacts,debt reduction
+ecm,4-cooldown,Exploration,EX,30,_ecm/ecm/workflows/4-cooldown/exploration/workflow.yaml,ecm-exploration,false,shaper,Create Mode,"Blue-sky prototyping for future pitches",shaping_artifacts,exploration notes
+ecm,quick-flow,Quick Spec,QS,10,_ecm/ecm/workflows/quick-flow/quick-spec/workflow.yaml,ecm-quick-spec,false,quick-flow,Create Mode,"Fast-track specification for small work",shaping_artifacts,quick spec
+ecm,quick-flow,Quick Dev,QD,20,_ecm/ecm/workflows/quick-flow/quick-dev/workflow.yaml,ecm-quick-dev,false,quick-flow,Create Mode,"Fast-track development for small work",building_artifacts,quick implementation
+ecm,3-building,Spawn Builder,SB,25,_ecm/core/workflows/spawn-agent/workflow.yaml,ecm-spawn-builder,false,cycle-lead,Create Mode,"Fork a builder subagent for parallel scope work",building_artifacts,subagent task
+ecm,1-shaping,Spawn Investigator,SI,35,_ecm/core/workflows/spawn-agent/workflow.yaml,ecm-spawn-investigator,false,technical-shaper,Create Mode,"Fork an investigator for parallel de-risking",shaping_artifacts,subagent task
+ecm,3-building,Spawn Reviewer,SR,55,_ecm/core/workflows/spawn-agent/workflow.yaml,ecm-spawn-reviewer,false,builder,Create Mode,"Fork a reviewer for parallel code review",building_artifacts,subagent task

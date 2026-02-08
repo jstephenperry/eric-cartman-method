@@ -1,0 +1,22 @@
+# Test: Menu item with invalid trigger format
+# Expected: FAIL
+
+agent:
+  metadata:
+    id: bad-trigger-test
+    name: Bad Trigger Test
+    title: Bad Trigger
+    icon: "\u274C"
+    hasSidecar: false
+
+  persona:
+    role: Test role
+    identity: Test identity
+    communication_style: Test style
+    principles: Test principles
+
+  menu:
+    - trigger: Shape_Problem
+      # Should be kebab-case (shape-problem) or compound format
+      description: Bad trigger format
+      action: test_action

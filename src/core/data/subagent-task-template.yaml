@@ -1,0 +1,70 @@
+# Subagent Task Template
+# Use this template when spawning a subagent for concurrent work
+
+task:
+  # Unique identifier for this task
+  id: "{{task_id}}"
+
+  # Human-readable name
+  name: "{{task_name}}"
+
+  # Agent type to embody (shaper, builder, technical-shaper, cycle-lead, reviewer, investigator)
+  agent: "{{agent_type}}"
+
+  # Parent agent that spawned this task
+  spawned_by: "{{parent_agent}}"
+
+  # Timestamp when spawned
+  spawned_at: "{{timestamp}}"
+
+  # Clear, single objective for this subagent
+  objective: |
+    {{clear_objective}}
+
+  # Context the subagent needs
+  context:
+    # Current cycle (if applicable)
+    cycle: "{{cycle_id}}"
+
+    # Scope being worked on (if applicable)
+    scope: "{{scope_id}}"
+
+    # Pitch reference (if applicable)
+    pitch: "{{pitch_id}}"
+
+    # Files the subagent may read
+    read_files:
+      - "{{file_path}}"
+
+    # Files the subagent may modify (strict boundary)
+    write_files:
+      - "{{file_path}}"
+
+    # Additional context
+    notes: |
+      {{additional_context}}
+
+  # Expected outputs from this subagent
+  deliverables:
+    - description: "{{deliverable_1}}"
+      type: file | report | decision
+      path: "{{output_path}}"
+
+  # Constraints the subagent must follow
+  constraints:
+    - "Do not modify files outside the write_files list"
+    - "Report blockers immediately rather than waiting"
+    - "Complete the single objective, do not expand scope"
+    - "{{additional_constraint}}"
+
+  # How to handle completion
+  on_complete:
+    report_to: "{{parent_agent}}"
+    update_registry: true
+    archive_task: true
+
+  # How to handle blockers
+  on_blocked:
+    report_immediately: true
+    continue_unblocked_work: true
+    escalate_to: "{{parent_agent}}"

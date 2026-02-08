@@ -1,0 +1,13 @@
+name: create-scope
+description: "Document a discovered scope with initial hill position and finishing criteria"
+author: "ECM"
+
+config_source: "{project-root}/_ecm/ecm/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+building_artifacts: "{config_source}:building_artifacts"
+date: system-generated
+
+installed_path: "{project-root}/_ecm/ecm/workflows/3-building/create-scope"
+instructions: "{installed_path}/instructions.md"

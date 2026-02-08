@@ -1,0 +1,23 @@
+# Test: Minimal valid agent with only required fields
+# Expected: PASS
+
+agent:
+  metadata:
+    id: minimal-test
+    name: Minimal Test Agent
+    title: Minimal Test
+    icon: "\U0001F9EA"
+    hasSidecar: false
+
+  persona:
+    role: Test agent with minimal configuration
+    identity: I am a minimal test agent used for schema validation testing.
+    communication_style: Clear and concise
+    principles: |
+      - Validate schema requirements
+      - Demonstrate minimal valid structure
+
+  menu:
+    - trigger: help
+      description: Show help
+      action: display_help

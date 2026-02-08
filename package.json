@@ -1,0 +1,58 @@
+{
+  "name": "eric-cartman-method",
+  "version": "1.0.0-alpha.1",
+  "description": "AI-driven Shape Up methodology for software development - Fixed time, variable scope",
+  "main": "tools/cli/ecm-cli.js",
+  "bin": {
+    "ecm": "tools/cli/ecm-cli.js",
+    "eric-cartman-method": "tools/cli/ecm-cli.js"
+  },
+  "scripts": {
+    "ecm:install": "node tools/cli/ecm-cli.js install",
+    "ecm:status": "node tools/cli/ecm-cli.js status",
+    "test": "npm run test:schemas && npm run validate:schemas && npm run lint && npm run format:check",
+    "test:schemas": "node test/test-agent-schema.js",
+    "validate:schemas": "node tools/validate-agent-schema.js",
+    "format:check": "prettier --check \"**/*.{js,cjs,mjs,json,yaml,yml}\"",
+    "format:fix": "prettier --write \"**/*.{js,cjs,mjs,json,yaml,yml}\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "shape-up",
+    "methodology",
+    "ai-driven",
+    "development",
+    "basecamp",
+    "fixed-time",
+    "variable-scope",
+    "hill-charts",
+    "betting-table",
+    "circuit-breaker"
+  ],
+  "author": "Stephen Perry",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "js-yaml": "^4.1.0",
+    "csv-parse": "^5.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.2.5",
+    "zod": "^3.22.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenperry/eric-cartman-method.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stephenperry/eric-cartman-method/issues"
+  },
+  "homepage": "https://github.com/stephenperry/eric-cartman-method#readme"
+}

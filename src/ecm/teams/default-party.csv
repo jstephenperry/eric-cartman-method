@@ -1,0 +1,7 @@
+role,agent,name,icon,primary_workflows
+shaper,shaper,Maya,🔍,"shape-problem,shape-solution,exploration"
+pitcher,pitcher,Parker,🎯,"write-pitch,appetite-setting,betting-table"
+technical-shaper,technical-shaper,Wyatt,🧪,"breadboard,de-risk"
+cycle-lead,cycle-lead,Cameron,🚦,"cycle-planning,create-scope,update-hill-chart,circuit-breaker"
+builder,builder,Alex,🔨,"dev-scope,code-review,bug-bash,tech-debt"
+quick-flow,quick-flow,Quinn,⚡,"quick-spec,quick-dev"

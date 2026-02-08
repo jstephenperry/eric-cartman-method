@@ -1,0 +1,13 @@
+name: spawn-agent
+description: "Fork a subagent to work on an independent unit of work concurrently"
+author: "ECM"
+
+config_source: "{project-root}/_ecm/core/config.yaml"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+
+installed_path: "{project-root}/_ecm/core/workflows/spawn-agent"
+instructions: "{installed_path}/instructions.md"
+
+# Subagent tracking
+subagent_registry: "{project-root}/_ecm-output/building/subagents/registry.yaml"

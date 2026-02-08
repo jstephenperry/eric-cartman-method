@@ -1,0 +1,4 @@
+module,phase,name,code,sequence,workflow-file,command,required,agent,options,description,output-location,outputs
+core,anytime,Party Mode,PM,,_ecm/core/workflows/party-mode/workflow.yaml,ecm-party-mode,false,cartman-master,,"Multi-agent collaboration mode",,
+core,anytime,Spawn Agent,SA,,_ecm/core/workflows/spawn-agent/workflow.yaml,ecm-spawn-agent,false,cartman-master,,"Fork a subagent for concurrent independent work",,
+core,anytime,List Subagents,LS,,,ecm-list-subagents,false,cartman-master,,"Show active subagents and their status",,

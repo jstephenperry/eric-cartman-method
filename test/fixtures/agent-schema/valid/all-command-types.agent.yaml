@@ -1,0 +1,42 @@
+# Test: Agent with all command types
+# Expected: PASS
+
+agent:
+  metadata:
+    id: all-commands-test
+    name: All Commands Test
+    title: Commands Test
+    icon: "\U0001F528"
+    hasSidecar: false
+
+  persona:
+    role: Test agent for all command types
+    identity: I test all command target types.
+    communication_style: Direct
+    principles: |
+      - Validate all command types work
+
+  menu:
+    - trigger: workflow-test
+      description: Workflow command
+      workflow: "/path/to/workflow.yaml"
+
+    - trigger: exec-test
+      description: Exec command
+      exec: "/path/to/script.sh"
+
+    - trigger: action-test
+      description: Action command
+      action: perform_action
+
+    - trigger: tmpl-test
+      description: Template command
+      tmpl: "/path/to/template.md"
+
+    - trigger: data-test
+      description: Data command
+      data: "/path/to/data.md"
+
+    - trigger: validate-test
+      description: Validate command
+      validate-workflow: "/path/to/validation"

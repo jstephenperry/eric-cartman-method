@@ -1,0 +1,13 @@
+name: quick-spec
+description: "Fast-track specification for small, well-understood work"
+author: "ECM"
+
+config_source: "{project-root}/_ecm/ecm/config.yaml"
+output_folder: "{config_source}:output_folder"
+user_name: "{config_source}:user_name"
+communication_language: "{config_source}:communication_language"
+shaping_artifacts: "{config_source}:shaping_artifacts"
+date: system-generated
+
+installed_path: "{project-root}/_ecm/ecm/workflows/quick-flow/quick-spec"
+instructions: "{installed_path}/instructions.md"

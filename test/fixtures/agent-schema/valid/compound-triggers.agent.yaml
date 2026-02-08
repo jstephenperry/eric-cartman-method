@@ -1,0 +1,30 @@
+# Test: Agent with compound triggers
+# Expected: PASS
+
+agent:
+  metadata:
+    id: compound-trigger-test
+    name: Compound Trigger Test
+    title: Compound Test
+    icon: "\U0001F3AF"
+    hasSidecar: false
+
+  persona:
+    role: Test agent for compound trigger validation
+    identity: I test compound trigger patterns.
+    communication_style: Technical
+    principles: |
+      - Validate compound trigger format
+
+  menu:
+    - trigger: SP or fuzzy match on shape-problem
+      description: "[SP] Shape Problem: Test workflow"
+      workflow: "/path/to/workflow"
+
+    - trigger: WP or fuzzy match on write-pitch
+      description: "[WP] Write Pitch: Another test"
+      exec: "/path/to/exec"
+
+    - trigger: BT or fuzzy match on betting-table
+      description: "[BT] Betting Table: Yet another"
+      action: betting_action

@@ -1,0 +1,53 @@
+# Subagent Result Template
+# Subagents report back using this format
+
+result:
+  # Task this result is for
+  task_id: "{{task_id}}"
+
+  # Final status
+  status: "{{completed | blocked | failed}}"
+
+  # When the task completed
+  completed_at: "{{timestamp}}"
+
+  # Summary of what was accomplished
+  summary: |
+    {{summary_of_work}}
+
+  # Deliverables produced
+  deliverables:
+    - path: "{{file_path}}"
+      description: "{{what_was_created_or_modified}}"
+      type: "{{created | modified | deleted}}"
+
+  # For scope work: hill chart update
+  hill_chart:
+    scope: "{{scope_id}}"
+    previous_position: "{{previous}}"
+    new_position: "{{new}}"
+    rationale: "{{why_this_position}}"
+
+  # Any blockers encountered (if status is blocked)
+  blockers:
+    - blocker: "{{description}}"
+      type: "{{external | internal | technical}}"
+      suggested_resolution: "{{how_to_unblock}}"
+
+  # Work that was completed despite blockers
+  partial_work:
+    - "{{what_was_completed}}"
+
+  # Recommendations for parent agent
+  recommendations:
+    - "{{recommendation}}"
+
+  # Any follow-up tasks that should be spawned
+  suggested_followups:
+    - objective: "{{followup_objective}}"
+      agent: "{{agent_type}}"
+      reason: "{{why_needed}}"
+
+  # Additional notes
+  notes: |
+    {{additional_context}}
